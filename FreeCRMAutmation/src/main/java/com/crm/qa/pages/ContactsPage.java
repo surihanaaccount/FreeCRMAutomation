@@ -169,13 +169,14 @@ public class ContactsPage extends CRMBase{
 	}
 	
 	
-	public void clickNew()
+	public void clickNew() throws InterruptedException
 	{
 		boolean flag=Utilities.isClickable(createBtn);
 		if(flag)
 		{
 			System.out.println("Ready to click New button");
 		createBtn.click();
+		Thread.sleep(10000);
 		}
 	}
 	

@@ -54,7 +54,7 @@ public class ContactPageTest extends CRMBase {
 	}
 	
 	@Test(priority =2)
-	public void ClickNewContact()
+	public void ClickNewContact() throws InterruptedException
 	{
 		
 		contactpage.clickNew();
