@@ -145,11 +145,6 @@ public class ContactsPage extends CRMBase{
 	
 	
 	
-	
-	
-	
-	
-	
 	public ContactsPage()
 	{
 		PageFactory.initElements(driver, this);
@@ -176,7 +171,11 @@ public class ContactsPage extends CRMBase{
 	
 	public void clickNew()
 	{
+		boolean flag=Utilities.isClickable(createBtn);
+		if(flag)
+		{
 		createBtn.click();
+		}
 	}
 	
 	 public void selectCategory(){
@@ -334,7 +333,7 @@ public class ContactsPage extends CRMBase{
 	public void fillContactDetails(String firstName1, String lastName1, String companyName1) throws InterruptedException, AWTException
 	{
 		
-		Thread.sleep(1000);
+		Utilities.isVisible("input[name='first_name']");
 		firstName.sendKeys(firstName1);
 		lastName.sendKeys(lastName1);
 		middleName.sendKeys("Sri");

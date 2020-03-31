@@ -106,7 +106,7 @@ public class Utilities extends CRMBase {
 		{
 		    try
 		    {
-		        WebDriverWait wait = new WebDriverWait(driver, 5);
+		        WebDriverWait wait = new WebDriverWait(driver, 15);
 		        wait.until(ExpectedConditions.elementToBeClickable(webe));
 		        return true;
 		    }
@@ -183,7 +183,7 @@ public class Utilities extends CRMBase {
 	 {
 		 try {
 		 WebDriverWait wait = new WebDriverWait(driver,20);
-		 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(type)));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(type)));
 		 return true;
 		 }
 		 catch(Exception e)
