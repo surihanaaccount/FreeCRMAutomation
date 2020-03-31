@@ -56,6 +56,7 @@ public class HomePage extends CRMBase{
 	}
 	public ContactsPage clickContactLink()
 	{
+		Utilities.isClickable(contactLink);
 	    action.moveToElement(contactLink).click().build().perform();
 		return new ContactsPage();
 	}

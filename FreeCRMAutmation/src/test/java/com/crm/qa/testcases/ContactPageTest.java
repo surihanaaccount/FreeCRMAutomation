@@ -18,7 +18,7 @@ import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.pages.LoginPageHome;
 import com.crm.qa.util.ExcelUtil;
-import com.crm.qa.util.Utilities;
+
 
 public class ContactPageTest extends CRMBase {
 	
@@ -53,16 +53,6 @@ public class ContactPageTest extends CRMBase {
 		assertEquals(flag, true, "The contact Name is not given properly");
 	}
 	
-	
-	
-	@Test(priority=3)
-	public void verifyFirstName()
-	{
-		
-	}
-	
-	
-	
 	@Test(priority =2)
 	public void ClickNewContact()
 	{
@@ -73,18 +63,18 @@ public class ContactPageTest extends CRMBase {
 	
 	
 	
-	@Test(priority =4,dataProvider="contactDetails")
-	public void createNewContract(String FirstName,String LastName,String middleName,String CompanyName) throws InterruptedException, AWTException
+	@Test(priority =3,dataProvider="contactDetails")
+	public void createNewContract(String FirstName,String LastName,String middleName,String CompanyName,String EmailAddress,String PersonalEmail,String Status,String description,String SocialChannel,String channelLink,String timeZone) throws InterruptedException, AWTException
 	{
 		
-		contactpage.fillContactDetails(FirstName,LastName,middleName,CompanyName);
+		contactpage.fillContactDetails(FirstName,LastName,middleName,CompanyName,EmailAddress,PersonalEmail,Status,description,SocialChannel,channelLink,timeZone);
 		
 	}
 	
 	@AfterTest
 	public void tearDown() throws InterruptedException {
 		Thread.sleep(30000);
-		driver.close();
+		//driver.close();
 	}
 	
 	

@@ -174,6 +174,7 @@ public class ContactsPage extends CRMBase{
 		boolean flag=Utilities.isClickable(createBtn);
 		if(flag)
 		{
+			System.out.println("Ready to click New button");
 		createBtn.click();
 		}
 	}
@@ -330,12 +331,13 @@ public class ContactsPage extends CRMBase{
 	 
 	
 	
-	public void fillContactDetails(String firstName1, String lastName1,String middleName1, String companyName1) throws InterruptedException, AWTException
+	public void fillContactDetails(String firstName1, String lastName1,String middleName1, String companyName1, String emailAddress2, String personalEmail, String status2, String description2, String socialChannel2, String channelLink, String timeZone2) throws InterruptedException, AWTException
 	{
 		
 		boolean flag=Utilities.isVisible("input[name='first_name']");
 		if(flag)
 		{
+			System.out.println("Entered into page");
 		firstName.sendKeys(firstName1);
 		lastName.sendKeys(lastName1);
 		middleName.sendKeys(middleName1);
@@ -345,16 +347,16 @@ public class ContactsPage extends CRMBase{
 		//tag.sendKeys("Id");
 		if(Utilities.fieldEmailValidation("abc.cde@gmail.com"))
 		{
-		emailAddress.sendKeys("abc@gmail.com");
+		emailAddress.sendKeys(emailAddress2);
 		}
-		personalEmailAddress.sendKeys("abc@gmail.com");
+		personalEmailAddress.sendKeys(personalEmail);
 		selectCategory();
-		selectStatus("InActive");
+		selectStatus(status2);
 		
-		description.sendKeys("Nothing to describe");
-		selectSocialChannel("LinkedIn");
-		socialChannelLink.sendKeys("https://in.linkedin.com/");
-		selectTimeZone("Indian/Christmas");
+		description.sendKeys(description2);
+		selectSocialChannel(socialChannel2);
+		socialChannelLink.sendKeys(channelLink);
+		selectTimeZone(timeZone2);
 		selectPhone("India"); //Under code and number also can be defined in selectPhone method.
 		position.sendKeys("Technical Lead");
 		department.sendKeys("Tech Department");
