@@ -74,16 +74,10 @@ public class ContactPageTest extends CRMBase {
 	
 	
 	@Test(priority =4,dataProvider="contactDetails")
-	public void createNewContract(String FirstName,String LastName,String CompanyName) throws InterruptedException, AWTException
+	public void createNewContract(String FirstName,String LastName,String middleName,String CompanyName,String EmailAddress,String PersonalEmail,String Status,String description,String SocialChannel,String channelLink,String timeZone,String phoneCountry,String position,String department,String supervisor,String assistant,String refferedBy,String address,String city,String state,String zipCode,String country,String source,String identifier) throws InterruptedException, AWTException
 	{
 		
-		
-		
-		
-		
-		
-		contactpage.fillContactDetails(FirstName,LastName,CompanyName);
-		
+		contactpage.fillContactDetails(FirstName,LastName,middleName,CompanyName,EmailAddress,PersonalEmail,Status,description,SocialChannel,channelLink,timeZone,phoneCountry,position,department,supervisor,assistant,refferedBy,address,city,state,zipCode,country,source,identifier);
 		
 	}
 	
