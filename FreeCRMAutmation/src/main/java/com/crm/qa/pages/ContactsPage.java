@@ -330,7 +330,7 @@ public class ContactsPage extends CRMBase{
 	 
 	
 	
-	public void fillContactDetails(String firstName1, String lastName1,String middleName1, String companyName1, String emailAddress2, String personalEmail, String status2, String description2, String socialChannel2, String channelLink, String timeZone2, String phoneCountry, String position2, String department2, String supervisor2, String assistant2, String refferedBy, String address2, String city2, String state2, String zipCode2, String country2, String source2, String identifier2) throws InterruptedException, AWTException
+	public void fillContactDetails(String firstName1, String lastName1,String middleName1, String companyName1) throws InterruptedException, AWTException
 	{
 		
 		boolean flag=Utilities.isVisible("input[name='first_name']");
@@ -343,32 +343,32 @@ public class ContactsPage extends CRMBase{
 		//selectCompany("Akvila");
 		companyName.sendKeys(companyName1);
 		//tag.sendKeys("Id");
-		if(Utilities.fieldEmailValidation(emailAddress2))
+		if(Utilities.fieldEmailValidation("abc.cde@gmail.com"))
 		{
-		emailAddress.sendKeys(emailAddress2);
+		emailAddress.sendKeys("abc@gmail.com");
 		}
-		personalEmailAddress.sendKeys(personalEmail);
+		personalEmailAddress.sendKeys("abc@gmail.com");
 		selectCategory();
-		selectStatus(status2);
+		selectStatus("InActive");
 		
-		description.sendKeys(description2);
-		selectSocialChannel(socialChannel2);
-		socialChannelLink.sendKeys(channelLink);
-		selectTimeZone(timeZone2);
-		selectPhone(phoneCountry); //Under code and number also can be defined in selectPhone method.
-		position.sendKeys(position2);
-		department.sendKeys(department2);
-		supervisor.sendKeys(supervisor2);
-		assistant.sendKeys(assistant2);
-		referredBy.sendKeys(refferedBy);
-		address.sendKeys(address2);
-		city.sendKeys(city2);
-		state.sendKeys(state2);
-		zipCode.sendKeys(zipCode2);
-		selectCountry(country2);
-		selectSource(source2);
+		description.sendKeys("Nothing to describe");
+		selectSocialChannel("LinkedIn");
+		socialChannelLink.sendKeys("https://in.linkedin.com/");
+		selectTimeZone("Indian/Christmas");
+		selectPhone("India"); //Under code and number also can be defined in selectPhone method.
+		position.sendKeys("Technical Lead");
+		department.sendKeys("Tech Department");
+		supervisor.sendKeys("Sharukh");
+		assistant.sendKeys("RoshanAssistant");
+		referredBy.sendKeys("Andhukuri");
+		address.sendKeys("Kukatpally");
+		city.sendKeys("Hyderabad");
+		state.sendKeys("Telanagna");
+		zipCode.sendKeys("500072");
+		selectCountry("India");
+		selectSource("Referral");
 		doNotCall.click();
-		identifier.sendKeys(identifier2);
+		identifier.sendKeys("BirthDay Certificate");
 		doNotText.click();
 		doNotEmail.click();
 		selectBirth();
