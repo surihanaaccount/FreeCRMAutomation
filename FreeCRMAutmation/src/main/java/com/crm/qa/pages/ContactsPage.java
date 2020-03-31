@@ -332,51 +332,118 @@ public class ContactsPage extends CRMBase{
 	 
 	
 	
-	public void fillContactDetails(String firstName1, String lastName1,String middleName1, String companyName1, String emailAddress2, String personalEmail, String status2, String description2, String socialChannel2, String channelLink, String timeZone2) throws InterruptedException, AWTException
+	public void fillContactDetails(String firstName1, String lastName1,String middleName1, String companyName1, String emailAddress2, String personalEmail, String status2, String description2, String socialChannel2, String channelLink, String timeZone2,String phoneCountry, String position2, String department2, String supervisor2, String assistant2, String refferedBy, String address2, String city2, String state2, String zipCode2, String country2, String source2, String identifier2) throws InterruptedException, AWTException
 	{
 		
+		//do
+		//{
+		//driver.navigate().refresh();
+		//}
+		//while(!Utilities.isVisible("input[name='first_name']"));
+		
 		boolean flag=Utilities.isVisible("input[name='first_name']");
-		if(flag)
+		
+		if(!flag)
 		{
-			System.out.println("Entered into page");
+			do
+			{
+				driver.navigate().refresh();
+			}while(!Utilities.isVisible("input[name='first_name']"));
+		}
+		
+		System.out.println("Entered into page");
+		
+		Utilities.isClear(firstName);
 		firstName.sendKeys(firstName1);
+		
+		Utilities.isClear(lastName);
 		lastName.sendKeys(lastName1);
+		
+		Utilities.isClear(middleName);
 		middleName.sendKeys(middleName1);
 		
+		
 		//selectCompany("Akvila");
+		Utilities.isClear(companyName);
 		companyName.sendKeys(companyName1);
 		//tag.sendKeys("Id");
 		if(Utilities.fieldEmailValidation("abc.cde@gmail.com"))
 		{
+		Utilities.isClear(emailAddress);	
 		emailAddress.sendKeys(emailAddress2);
 		}
+		
+		Utilities.isClear(personalEmailAddress);
 		personalEmailAddress.sendKeys(personalEmail);
+		
+		
 		selectCategory();
+		
+		
 		selectStatus(status2);
 		
+		Utilities.isClear(description);
 		description.sendKeys(description2);
+		
+		
 		selectSocialChannel(socialChannel2);
+		
+		Utilities.isClear(socialChannelLink);
 		socialChannelLink.sendKeys(channelLink);
+		
+		
 		selectTimeZone(timeZone2);
-		selectPhone("India"); //Under code and number also can be defined in selectPhone method.
-		position.sendKeys("Technical Lead");
-		department.sendKeys("Tech Department");
-		supervisor.sendKeys("Sharukh");
-		assistant.sendKeys("RoshanAssistant");
-		referredBy.sendKeys("Andhukuri");
-		address.sendKeys("Kukatpally");
-		city.sendKeys("Hyderabad");
-		state.sendKeys("Telanagna");
-		zipCode.sendKeys("500072");
-		selectCountry("India");
-		selectSource("Referral");
+		
+		
+		selectPhone(phoneCountry); 
+		
+		
+		Utilities.isClear(position);
+		position.sendKeys(position2);
+		
+		Utilities.isClear(department);
+		department.sendKeys(department2);
+		
+		Utilities.isClear(supervisor);
+		supervisor.sendKeys(supervisor2);
+		
+		Utilities.isClear(assistant);
+		assistant.sendKeys(assistant2);
+		
+		Utilities.isClear(referredBy);
+		referredBy.sendKeys(refferedBy);
+		
+		Utilities.isClear(address);
+		address.sendKeys(address2);
+		
+		Utilities.isClear(city);
+		city.sendKeys(city2);
+		
+		Utilities.isClear(state);
+		state.sendKeys(state2);
+		
+		Utilities.isClear(zipCode);
+		zipCode.sendKeys(zipCode2);
+		
+		
+		
+		selectCountry(country2);
+		
+		
+		selectSource(source2);
+		
+		
 		doNotCall.click();
-		identifier.sendKeys("BirthDay Certificate");
+		
+		Utilities.isClear(identifier);
+		identifier.sendKeys(identifier2);
+		
+		
 		doNotText.click();
 		doNotEmail.click();
 		selectBirth();
 		imageSelection();
-		}
+		
 		
 		
 	}

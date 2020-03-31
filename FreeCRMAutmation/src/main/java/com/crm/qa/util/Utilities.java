@@ -193,4 +193,9 @@ public class Utilities extends CRMBase {
 		 
 	}
 	 
+	 public static void isClear(WebElement ele)
+	 {
+		 ele.clear();
+	 }
+	 
 }
